@@ -41,6 +41,11 @@ def login(
     )
 
 
+@router.get("/me", response_model=UserOut)
+def me(current_user: User = Depends(get_current_user)) -> User:
+    return current_user
+
+
 @router.post("/refresh", response_model=Token)
 def refresh_token(refresh_token: str, db: Session = Depends(get_db)) -> Token:
     try:
