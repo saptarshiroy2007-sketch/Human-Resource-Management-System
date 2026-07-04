@@ -1,0 +1,7 @@
+.env
+*.db
+__pycache__/
+.pytest_cache/
+storage/uploads/
+frontend/dist/
+frontend/node_modules/

@@ -8,6 +8,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
+import app.db.base  # noqa: F401
 from app.db.session import SessionLocal
 from app.models.user import User, UserRole
 from app.schemas.user import UserCreate

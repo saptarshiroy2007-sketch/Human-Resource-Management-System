@@ -1,5 +1,5 @@
 import { createElement } from "react";
-import { Building2, CalendarDays, LayoutDashboard, LogOut } from "lucide-react";
+import { Building2, CalendarDays, LayoutDashboard, LogOut, Plane, User, Users } from "lucide-react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 
 import { useAuth } from "../context/useAuth";
@@ -13,10 +13,14 @@ function AppLayout() {
     ? [
         { to: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
         { to: "/admin/attendance", label: "Attendance", icon: CalendarDays },
+        { to: "/admin/leave", label: "Time Off", icon: Plane },
+        { to: "/admin/employees", label: "Employees", icon: Users },
       ]
     : [
         { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
         { to: "/attendance", label: "Attendance", icon: CalendarDays },
+        { to: "/leave", label: "Time Off", icon: Plane },
+        { to: "/profile", label: "My Profile", icon: User },
       ];
 
   async function handleLogout() {
